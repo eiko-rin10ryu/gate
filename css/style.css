@@ -1,0 +1,770 @@
+@charset "UTF-8";
+
+img{
+    vertical-align: bottom;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+li{
+    list-style: none;
+}
+
+
+ul{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    color:black;
+
+}
+
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* header */
+
+header{
+    width: 100%;
+    display: flex;
+    /* position: fixed; */
+    /* z-index: 10; */
+    background-color: #fff;
+}
+
+.site-title {
+    width: 180px;
+    margin: 0 auto;
+    padding: 30px 0;
+    
+}
+
+/* ハンバーガーメニュー */
+
+#navi{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    color: #c4972f;
+    width: 400px;
+    height: 100%;
+    padding: 60px ;
+    font-size: 35px;
+    line-height: 3;
+    background-color: #121212;
+    overflow-x:hidden ;
+    overflow-y: auto;
+    transition: all 0.5s;
+    z-index: 20;
+    opacity: 0;
+}
+
+#navi a{
+    color: #c4972f;
+}
+
+#navi a:hover{
+    color: #fff;
+}
+
+
+.open #navi{
+    left: 0;
+    opacity: 1;
+}
+
+#navi ul .nav-menu{
+    position: relative;
+    margin: 0;
+    padding: 20px 0;
+}
+
+
+
+.toggle_btn{
+    margin: 20px 20px 0 0;
+    width: 40px;
+    height: 40px;
+    transition: all 0.5s;
+    position: relative;
+    cursor: pointer;
+    z-index: 20; 
+}
+
+.toggle_btn span{
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    border-radius: 4px;
+    transition: all 0.5s;
+}
+
+.toggle_btn span:nth-child(1){
+    top:22%;
+}
+
+.toggle_btn span:nth-child(2){
+    top:50%;
+}
+
+.toggle_btn span:nth-child(3){
+    top:78%;
+}
+
+.open .toggle_btn span{
+    background-color: #c4972f;
+}
+
+.open .toggle_btn span:nth-child(1){
+    top:50%;
+    -webkit-transform: rotate(-315deg);
+    transform: rotate(-315deg);
+}
+
+.open .toggle_btn span:nth-child(2){
+    opacity: 0;
+}
+
+.open .toggle_btn span:nth-child(3){
+    top:50%;
+    -webkit-transform: rotate(315deg);
+    transform: rotate(315deg);
+}
+
+#mask{
+    display: none;
+    transition: aii 0.5s;
+}
+
+.open #mask{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.8;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+/*-------------------------------------------
+    index
+-------------------------------------------*/
+
+
+.slider{
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
+}
+
+
+
+.topics{
+    text-align: center;
+    margin: 50px 0;
+}
+
+h2{
+    color: #c4972f;
+    font-size: 30px;
+    letter-spacing: 20px;
+    border-bottom: 1px solid #121212;
+    line-height: 3;
+}
+
+.topics-list{
+    margin-top: 24px;
+    font-size: 1.3rem;
+    line-height: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.slide-left1, .slide-left2, .slide-right1, .slide-right2{
+    opacity: 0;
+}
+
+
+.inview-slide-left1 {
+    animation: inview-slide-left1 0.5s ease-out 0s 1 forwards;
+}
+.inview-slide-left2 {
+    animation: inview-slide-left2 1.5s ease-out 0s 1 forwards;
+}
+
+.inview-slide-right1 {
+    animation: inview-slide-right1 1s ease-out 0s 1 forwards;
+}
+.inview-slide-right2 {
+    animation: inview-slide-right2 2s ease-out 0s 1 forwards;
+}
+
+
+
+@keyframes inview-slide-left1 {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes inview-slide-left2 {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes inview-slide-right1 {
+    0% {
+        transform: translateX(150%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes inview-slide-right2 {
+    0% {
+        transform: translateX(150%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/*-------------------------------------------
+    company
+-------------------------------------------*/
+
+
+
+.company{
+    max-width: 1000px;
+    display: flex;
+    align-items: start;
+    gap: 30px;
+    padding-top: 80px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+
+
+.company dl{
+    width: 50%;
+    display: flex; 
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.company dt{
+    width: 30%;
+}
+.company dd{
+    width: 70%;
+    margin-bottom: 30px;
+}
+
+.map{
+    width: 50%;
+}
+
+
+.map-img img {
+    width: 100%; 
+    float: left;/* 画像の幅を親要素に対して100%に設定 */
+    height: auto; 
+    margin-bottom: 45px;/* アスペクト比を保持するために自動で高さを計算 */
+}
+
+.btn{
+    
+    text-align: center;
+    
+}
+
+/* ボタン共通設定 */
+.btn03{
+    /*影の基点とするためrelativeを指定*/
+    position: relative;
+    /*ボタンの形状*/
+	text-decoration: none;
+	display: inline-block;
+    text-align: center;
+    background: transparent;
+	border-radius: 5px;
+	border: solid 1px #333;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all 0.2s ease;
+}
+
+/*hoverをした後のボタンの形状*/
+.btn03:hover{
+	border-color:transparent;	
+}
+
+/*ボタンの中のテキスト*/
+.btn03 span {
+	position: relative;
+	z-index: 2;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+    /*テキストの形状*/
+	display: block;
+    padding: 10px 30px;
+	background:#fff;
+	border-radius: 5px;
+	color:#898989;
+    /*アニメーションの指定*/
+    transition: all 0.3s ease;
+}
+
+/*== 右下に押し込まれる（立体が平面に） */
+
+/*影の設定*/
+.pushright:before {
+    content: "";
+    /*絶対配置で影の位置を決める*/
+    position: absolute;
+	z-index: -1;
+    top: 4px;
+    left: 4px;
+    /*影の形状*/
+    width: 100%;
+    height: 100%;
+	border-radius: 5px;
+    background-color: #898989;
+}
+
+/*hoverの際にX・Y軸に4pxずらす*/
+.pushright:hover span {
+	background-color: #898989;
+	color: #fff;
+	transform: translate(4px, 4px);
+}
+
+
+/*-------------------------------------------
+    recruit
+-------------------------------------------*/
+
+.recruit{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.recruit-title {
+    font-size: 24px;
+    text-align: center;
+    border-bottom: 1px solid #c4972f;
+    padding-bottom: 30px;
+    margin-bottom: 30px; /* 余白を追加 */
+}
+
+.recruit-text{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.item{
+    width: 20%;
+    font-weight: bold;
+}
+
+
+
+.recruit dt {
+    font-weight: bold;
+    float: left ;
+    clear: left ;
+    margin-right: 0.5em ;
+    width: 15%;
+}
+
+.recruit dd {
+    float: left ;
+    margin-left: 1em ;
+}
+
+
+
+/*-------------------------------------------
+    Contact
+-------------------------------------------*/
+.contact{
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 40%;
+}
+
+#contact dl {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact dt, #contact dd {
+    margin-bottom: 15px;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* 枠線のスタイルを設定 */
+    border-radius: 5px; /* 角丸 */
+}
+
+#contact input[type="submit"] {
+    background-color: #c4972f;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 100px;
+    border-radius: 10px;
+    
+}
+
+#contact input[type="submit"]:hover {
+    background-color: #c4972f;
+    color: #fff;
+}
+
+
+
+.submit-btn{
+    text-align: center;
+    margin:50px 0 150px 0 ;
+}
+
+
+/*-------------------------------------------
+    works
+-------------------------------------------*/
+
+.top-store{
+    margin: 0 auto;
+    width: 50%;
+}
+
+.top-store-text{
+    text-align: center;
+    margin: 30px 0 60px 0;
+}
+
+.top-store-text .store-name{
+    font-size: 1rem;
+    color: #313030;
+}
+
+.top-store-text .location{
+    font-size: 0.8rem;
+    color: #313030;
+}
+
+.top-store-text .en{
+    font-size: 0.8rem;
+    color: #313030;
+}
+
+.store-list {
+    display: grid;
+/*   列数を指定 */
+grid-template-columns: 1fr 1fr 1fr;
+gap: 40px;
+margin-bottom: 40px;
+}
+
+.fadein{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s;
+}
+
+.store-text{
+    margin-top: 5px;   
+}
+
+.store .store-name{
+    font-size: 0.9rem;
+    border-bottom: 1px solid #c4972f;
+    padding-bottom: 2px;
+}
+
+.store .store-location {
+    font-size: 0.7rem;
+    padding-top:2px ;
+}
+
+.store .store-en{
+    font-size: 0.5rem;
+}
+
+.page{
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 50px 0 100px 0;
+    color: #313030;
+}
+
+.page span{
+    margin: 0 10px;
+    
+}
+
+.page span:hover{
+    color: #c4972f;
+}
+
+/* works-details */
+
+.details-store{
+    
+    width: 50%;
+    margin: 0 auto;
+    padding: 50px 0 100px;
+}
+
+.details-store-text{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.details-store h3{
+    padding-bottom: 5px;
+    font-size: 1.3rem;
+    border-bottom: 1px solid #c4972f;
+}
+
+.location{
+    padding-top:10px ;
+}
+
+#detail{
+    width: 100%;
+}
+
+
+
+ /*=== 画像の表示エリア ================================= */
+    
+
+
+/*-------------------------------------------
+    footer
+-------------------------------------------*/
+
+footer {
+    margin-top: auto;
+}
+
+.sns{
+background-color: #f2f2f2;
+height: 150px;
+display: flex;
+align-items: center; /* Vertical center alignment */
+justify-content: center;
+text-align: center;
+}
+
+.sns-img{
+    display: block;
+}
+
+.sns img{
+    width: 30px;
+    margin: 0 2px
+}
+
+.copylight{
+    font-size:12px;
+    color: #fff;
+    padding: 20px 0;
+    background-color: #121212;
+    text-align: center;
+}
+
+
+
+/*-------------------------------------------
+    sp
+-------------------------------------------*/
+
+
+@media (max-width: 900px) {
+
+    header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .site-title {
+        width: 130px;
+        margin: 20px 20px ;
+        padding: 0;
+    }
+
+    .topics h2{
+        font-size: 20px;
+    }
+
+    .topics-list{
+        font-size: 0.8rem;
+    }
+
+    .slider{
+        width: 100%;
+
+    }
+
+
+    .company{
+        width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+        
+    }   
+
+    .company dl {
+        width: 100%;
+    }
+
+    .map {
+        width: 100%;
+    }
+
+
+    .contact {
+        width: 90%;
+    }
+
+    .recruit {
+        width: 90%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+
+    .recruit-title {
+        font-size: 15px;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+    }
+
+    .recruit-text {
+        flex-direction: column;
+        font-size: 12px;
+    }
+
+    .recruit-text p{
+        font-size: 12px;
+    }
+
+    .item {
+        width: 100%;
+        font-size: 10px;
+    }
+
+
+.store-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    margin-bottom: 40px;
+}
+
+.top-store {
+width: 100%;
+}
+
+.top-store-text .store-name {
+    font-size: 1rem;
+    color: #313030;
+    padding-bottom: 5px;
+    border-bottom: 1px #c4972f solid;
+}
+
+.top-store-text {
+    text-align: center;
+    margin: 10px 0 30px 0;
+}
+
+.location {
+    padding-top: 5px;
+}
+
+
+
+.details-store {
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0 100px;
+}
+
+.detail-slider {
+    position: relative;
+    overflow: hidden;
+    width:100%;
+
+}
+
+
+
+.details-store-text  h3{
+    font-size: 1rem;
+}
+
+.slider{
+    width: 100%;
+}
+
+.sns {   
+    height: 90px;
+}
+
+.sns img {
+    width: 20px;
+}
+
+.copylight {
+    font-size: 6px;
+    padding: 7px 0;
+    
+}
+
+}
